@@ -1,8 +1,8 @@
-export default function Input(props) {
+export default function Input({ label, value, setValue, type }) {
     return (
         <div className="mb-3">
-            <label class="form-label">Email address</label>
-            <input value={props.email} onChange={(e) => setEmail(e.target.value)} type="email" class="form-control" />
+            <label className="form-label">{label}</label>
+            <input value={value} onChange={(e) => setValue(e.target.value)} type={type} className="form-control" />
         </div>
     )
 }
