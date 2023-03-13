@@ -2,7 +2,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import { DATABASE } from "./config";
+// import { DATABASE } from "./config";
 
 import authRoutes from "./routes/auth";
 import taskRoutes from "./routes/task";
@@ -23,7 +23,7 @@ const io = require("socket.io")(http, {
 // db connection
 mongoose.set("strictQuery", false); // required for version 6
 mongoose
-  .connect(DATABASE)
+  .connect(process.env.DATABASE)
   .then(() => console.log("DB connected"))
   .catch((err) => console.log("DB CONNECTION ERROR: ", err));
 
